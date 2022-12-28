@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.google.hilt)
     kapt(libs.google.hilt.compiler)
+    implementation(libs.androidx.constraintlayout.compose)
 }
 
 kapt {

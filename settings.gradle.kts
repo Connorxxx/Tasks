@@ -28,6 +28,7 @@ dependencyResolutionManagement {
             val room = "2.4.3"
             val navigation = "2.5.3"
             val hilt = "2.44"
+            val constraint = "1.0.1"
             library("androidx-core", "androidx.core:core-ktx:$core")
             library("androidx-lifecycle-runtime","androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle")
             library("androidx-lifecycle-viewmodel-compose", "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle")
@@ -43,6 +44,7 @@ dependencyResolutionManagement {
             library("androidx-navigation-compose", "androidx.navigation:navigation-compose:$navigation")
             library("google-hilt", "com.google.dagger:hilt-android:$hilt")
             library("google-hilt-compiler", "com.google.dagger:hilt-android-compiler:$hilt")
+            library("androidx-constraintlayout-compose", "androidx.constraintlayout:constraintlayout-compose:$constraint")
         }
     }
 }
