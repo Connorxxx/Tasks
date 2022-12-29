@@ -15,17 +15,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.connor.tasks.R
+import com.connor.tasks.viewmodels.MainViewModel
 
 @Composable
-fun AddTask(onDismiss: () -> Unit, cancelIconClick: () -> Unit, saveClick: () -> Unit) {
+fun AddTask(vm: MainViewModel, onDismiss: () -> Unit, cancelIconClick: () -> Unit, saveClick: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
             Column {
                 DialogHead(cancelIconClick = cancelIconClick, saveClick = saveClick)
                 Spacer(modifier = Modifier.height(24.dp))
-                DialogBody()
+                DialogBody(vm)
             }
         },
         text = { },
@@ -37,12 +39,11 @@ fun AddTask(onDismiss: () -> Unit, cancelIconClick: () -> Unit, saveClick: () ->
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DialogBody() {
-    var text by remember { mutableStateOf("") }
+fun DialogBody(vm: MainViewModel) {
     Column {
         OutlinedTextField(
-            value = text,
-            onValueChange = { text = it },
+            value = vm.text,
+            onValueChange = { vm.text = it },
             label = { Text(text = "New task") },
             modifier = Modifier.fillMaxWidth()
         )

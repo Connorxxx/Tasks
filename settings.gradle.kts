@@ -45,6 +45,7 @@ dependencyResolutionManagement {
             library("google-hilt", "com.google.dagger:hilt-android:$hilt")
             library("google-hilt-compiler", "com.google.dagger:hilt-android-compiler:$hilt")
             library("androidx-constraintlayout-compose", "androidx.constraintlayout:constraintlayout-compose:$constraint")
+            library("androidx-hilt-navigation-compose","androidx.hilt:hilt-navigation-compose:1.0.0")
         }
     }
 }
